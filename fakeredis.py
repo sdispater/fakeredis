@@ -840,7 +840,8 @@ class FakeStrictRedis(object):
         return [el[0] for el in in_order]
 
     def zrangebyscore(self, name, min, max,
-                      start=None, num=None, withscores=False):
+                      start=None, num=None, withscores=False,
+                      score_cast_func=float):
         """
         Return a range of values from the sorted set ``name`` with scores
         between ``min`` and ``max``.
